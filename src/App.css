@@ -1,38 +1,133 @@
+body {
+  background-position: 95% 17px;
+  background-repeat: no-repeat;
+  background-size: 125px 40px;
+}
 .App {
+  display: flex;
+}
+
+.preview-section {
+  height: 600px;
+  overflow: auto;
+}
+
+.notes-section {
+  position: relative;
+  width: 25%;
+  background-color: #595f68;
+}
+
+.preview-section {
+  position: relative;
+  width: 75%;
+  padding: 10px 75px;
+  box-sizing: border-box;
+}
+
+.add-btn {
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    line-height: 28px;
+    background-color: #c82333;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 30px;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    outline: 0;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-item {
+  cursor: pointer;
+  padding: 12px 10px;
+  font-size: 15px;
+  color: #fff;
+  border-bottom: 0.5px solid #fff;
+}
+
+.note-item.active {
+  background-color: #1c10be;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: .700rem .75rem;
+  font-size: 1rem;
+  font-family: cairo;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.note-operations {
+    position: absolute;
+    left: 10%;
+    top: 6%;
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+    font-size: 20px;
+}
+.note-operations a {
+  color: #7b7777;
+}
+
+.button {
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 60px;
+    font-size: 20px;
+}
+
+.green {
+  background: #28a745;
+}
+
+.center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.alert-container {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  background: #f43a4c;
+  min-width: 250px;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.alert-container ul {
+  font-size: 14px;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .notes-section {
+    width: 30%;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .preview-section {
+    width: 70%;
+    padding: 10px 30px;
   }
 }
